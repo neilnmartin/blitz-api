@@ -1,0 +1,30 @@
+working title: blitz
+
+ux:
+- user should be able to sign up and log in
+  - user should be able to use oauth SSO to log in
+- user can browse homepage of series
+- user can select a series to view or read
+  - each series has a title and cover artwork
+- user can click through the series 
+  - it tracks issue, chapter and page
+- user can search for a specific series or artist
+
+
+stretch goals/ultimate vision
+
+- subscriptions a la patreon
+  - tiers of subscription to artists
+
+tools:
+- back end:
+  - server: nodejs
+  - db: postregsql
+  - oauth: passport
+  - file storage: AWS S3
+- front end:
+  - react
+  - react-redux
+  - react-router
+  - material-ui
+  - webpack
