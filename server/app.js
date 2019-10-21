@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const router = require("./routes/index");
-const sequelize = require("./datamodels/index");
+const sequelize = require("./database/index");
 
 const app = express();
 
