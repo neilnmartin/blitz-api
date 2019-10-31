@@ -7,11 +7,6 @@ router
   .put('/art', controllers.artControllers.put)
   .delete('/art', controllers.artControllers.delete)
 router
-  .get('/auth', controllers.authControllers.get)
-  .post('/auth', controllers.authControllers.post)
-  .put('/auth', controllers.authControllers.put)
-  .delete('/auth', controllers.authControllers.delete)
-router
   .get('/art', controllers.userControllers.get)
   .post('/art', controllers.userControllers.post)
   .put('/art', controllers.userControllers.put)

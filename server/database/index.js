@@ -1,15 +1,23 @@
 const initOptions = {
   connect(client, databaseContext, useCount) {
-    console.log('Connected to database:', client.connectionParameters.database);
+    console.log("Connected to database:", client.connectionParameters.database);
   },
   disconnect(client, databaseContext) {
-    console.log('Disconnected from database:', client.connectionParameters.database);
- }
-}
+    console.log(
+      "Disconnected from database:",
+      client.connectionParameters.database
+    );
+  }
+};
 
-const { dbName, dbUserName, dbPassword, dbHost } = require('../config/config').database
+const {
+  dbName,
+  dbUserName,
+  dbPassword,
+  dbHost
+} = require("../config/config").database;
 
-const pgp = require('pg-promise')(initOptions)
+const pgp = require("pg-promise")(initOptions);
 
 const dbConfig = {
   host: dbHost,
@@ -19,7 +27,8 @@ const dbConfig = {
   password: dbPassword,
   keepAlive: true
   // check more advancecd parameters in docs (reapIntervalMillis, returnToHead, poolLog, parseInputDatesAsUTC, rows etc.)
-}
-const db = pgp(dbConfig)
+};
 
-module.exports = db
+const db = pgp(dbConfig);
+
+module.exports = db;
