@@ -66,5 +66,3 @@ ALTER TABLE "artwork" ADD FOREIGN KEY ("artist_id") REFERENCES "users" ("id");
 ALTER TABLE "artwork" ADD FOREIGN KEY ("series_id") REFERENCES "users" ("id");
 
 ALTER TABLE "page" ADD FOREIGN KEY ("issue_id") REFERENCES "issue" ("id");
-
-COMMENT ON COLUMN "artwork"."created_at" IS 'When order created';
