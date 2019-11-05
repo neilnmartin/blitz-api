@@ -8,8 +8,7 @@ const verifyToken = async (req, res, next) => {
 
     let token = req.headers['x-access-token'] || req.headers['authorization'];
     token = token.startsWith('Bearer ') ? token.slice(7) : token;
-
-    var decodedToken = await jwt.decode(token, config.auth.jwtSecret);
+    const decodedToken = await jwt.decode(token, config.auth.jwtSecret);
     console.log('decodedToken: ', decodedToken)
 
     if (moment(decodedToken.expiration).isAfter(moment())) {
@@ -18,9 +17,9 @@ const verifyToken = async (req, res, next) => {
     } else {
       res.status(401).send({ expiredToken: true })
     }
-  } catch (e) {
-    console.error(e)
-    throw e
+  } catch (error) {
+    console.error(error)
+    throw error
   }
 }
 
