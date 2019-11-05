@@ -36,7 +36,7 @@ const signup = async (req, res) => {
       WHERE email='${email}' 
     `))[0]
 
-    const expiration = moment().add(3, 'minutes').toDate();
+    const expiration = moment().add(60, 'minutes').toDate();
     const payload = { 
       user: {
         id: user.id,

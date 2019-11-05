@@ -21,7 +21,7 @@ const login = async (req, res) => {
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (passwordMatch) {
-      const expiration = moment().add(3, 'minutes').toDate();
+      const expiration = moment().add(60, 'minutes').toDate();
       console.log('expiration: ', expiration)
 
       const payload = {
