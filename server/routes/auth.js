@@ -1,4 +1,10 @@
-const login = require('./login')
-const signup = require('./signup')
+const authRouter = require("express").Router();
 
-module.exports = { login, signup };
+const login = require("./login");
+const signup = require("./signup");
+
+authRouter
+  .post("/login", login)
+  .post("/signup", signup);
+
+module.exports = authRouter;

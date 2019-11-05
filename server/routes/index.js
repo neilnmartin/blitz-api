@@ -1,4 +1,4 @@
-let router = require('express').Router()
+const router = require('express').Router()
 const controllers = require('../controllers/index')
 
 router
@@ -6,6 +6,7 @@ router
   .post('/art', controllers.artControllers.post)
   .put('/art', controllers.artControllers.put)
   .delete('/art', controllers.artControllers.delete)
+  
 router
   .get('/art', controllers.userControllers.get)
   .post('/art', controllers.userControllers.post)
