@@ -8,9 +8,9 @@ router
   .delete('/art', controllers.artControllers.delete)
   
 router
-  .get('/art', controllers.userControllers.get)
-  .post('/art', controllers.userControllers.post)
-  .put('/art', controllers.userControllers.put)
-  .delete('/art', controllers.userControllers.delete)
+  .get('/user', controllers.userControllers.get)
+  .post('/user', controllers.userControllers.post)
+  .put('/user', controllers.userControllers.put)
+  .delete('/user', controllers.userControllers.delete)
 
 module.exports = router
