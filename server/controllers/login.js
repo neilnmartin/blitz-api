@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const moment = require('moment');
 const jwt = require("jwt-simple");
-const db = require("../database/");
+const db = require("../database");
 const { jwtSecret } = require('../config/config').auth
 
 const login = async (req, res) => {
