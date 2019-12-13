@@ -4,8 +4,8 @@ module.exports = {
   get: async (req, res)  => {
     try {
       console.log(req.params)
-      const { title, id } = req.params 
-      
+      const { title, id } = req.params
+      console.log(title, id)
       const art = await db.query(`
           SELECT id, title FROM art
           WHERE id='${id}'`);

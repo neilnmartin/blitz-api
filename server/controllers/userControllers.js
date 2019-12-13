@@ -16,18 +16,16 @@ module.exports = {
     }
   },
   post: (req, res) => {
-    console.log(req.params)
-    // db
-    res.send('hello from post')
+    res.status(200).send('Please sign up')
   },
   put: (req, res) => {
-    console.log(req.params)
+    console.log(req.body)
     // db
     res.send('hello from put')
   },
   delete: (req, res) => {
     console.log(req.params)
     // db
-    res.send('hello from delete')
+    res.send('Please deactivate account')
   }
 }
