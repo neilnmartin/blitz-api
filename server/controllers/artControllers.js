@@ -7,7 +7,7 @@ module.exports = {
       const { title, id } = req.params
       console.log(title, id)
       const art = await db.query(`
-          SELECT id, title FROM art
+          SELECT id, title FROM art 
           WHERE id='${id}'`);
       console.log("db art: ", art);
       
@@ -17,10 +17,21 @@ module.exports = {
       res.status(500)
     }
   },
-  post: (req, res)  => {
-    console.log(req.params)
-    // db
-    res.send('hello from post')
+  post: async (req, res)  => {
+    try {
+      console.log(req.body)
+      const { title, id, artistId } = req.body
+      console.log(title, id)
+      const art = await db.query(`
+          INSER INTO art (title, artistId)
+          VALUES ('${title}', '${artistId}')`);
+      console.log("db art: ", art);
+      
+      res.status(200).send(art)
+    } catch (e) {
+      console.error(e)
+      res.status(500)
+    }
   },
   put: (req, res)  => {
     console.log(req.params)
