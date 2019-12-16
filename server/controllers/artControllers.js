@@ -27,9 +27,21 @@ module.exports = {
     // db
     res.send('hello from put')
   },
-  delete: (req, res)  => {
-    console.log(req.params)
-    // db
-    res.send('hello from delete')
-  }
+  delete: async (req, res)  => {
+    try {
+      console.log(req.params)
+      const { title, id } = req.params
+      console.log(title, id)
+      const art = await db.query(`
+          DELETE FROM art
+          WHERE id='${id}'`);
+      console.log("db art: ", art);
+      res.status(200).send({ 
+        success: true,
+        message: `Successfully deleted ${title}`
+      })
+    } catch (e) {
+      console.error(e)
+      res.status(500)
+    }
 }
