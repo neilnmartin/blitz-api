@@ -1,0 +1,14 @@
+@startuml
+title blitz/signup
+client --> api: POST /signup (email, username, pw, firstName, lastName)
+api <-> db: Check existing user by email
+api <-> db: Check existing user by username
+api --> api: Validate email and password inputs with regex
+api --> api: Hash password (bcrypt)
+api --> db: INSERT USER
+api --> db: SELECT USER where: email
+db --> api: Inserted user data: id, email, firstName, lastName
+api --> api: Generate jwt: id, email, username, firstName, lastName
+api --> db: UPDATE USER with jwt
+api --> client: 200: Created user (id, email, firstName, lastName) and jwt
+@enduml

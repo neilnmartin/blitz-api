@@ -1,0 +1,11 @@
+@startuml
+title blitz/login
+client --> api: POST /login (email, username, password)
+api --> db: SELECT USER where: email
+db --> api: id, email, hash, username, token, firstName, lastName
+api --> api: Verify input password and hash (bcrypt compare)
+api --> client: Case: Incorrect password - 401: Unauthorized
+api --> api: Generate new jwt: id, email, firstName, lastName
+api --> db: UPDATE USER with jwt
+api --> client: 200: user data (id, email, username, firstName, lastName) and jwt
+@enduml
