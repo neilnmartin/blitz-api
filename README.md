@@ -2,6 +2,10 @@
 
 REST API for a serial art sharing SPA
 
+To run the server locally:
+1. yarn
+2. yarn dev
+
 - db schema: https://dbdiagram.io/d/5d84383aff5115114db47333
 - plantuml diagrams
 - tools:
